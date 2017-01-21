@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Variaveis</title>
+  </head>
+  <script type="text/javascript">
+
+    alert("Não esqueça de usar o f12 e ir em console/source para ver a execução dos códigos ;) ");
+
+    /* Variaveis
+      Variaveis em Javascript são fracamente tipadas e podem ser uma combinação de letras, dígitos, sublinhados e cifrões porem devem começar com um caractere,
+      cifrão ou sublinhado.
+      Strings em Javascript podem ser declaradas tanto com aspas simples quanto duplas
+      ('' ou "")
+    */
+
+    var umaString = "Uma String"; // Declaração de uma string com ""
+    console.log(umaString);
+    umaString = 'Outra String'; // Declaração de uma string com ''
+    console.log(umaString);
+    umaString = "Esta é uma 'String'"; // Declaração de uma string com aspas simples interiores.
+    console.log(umaString);
+    umaString = 'Esta é outra string "Interna"';// Declaração de uma string com aspas duplas interiores.
+    console.log(umaString);
+
+    /*Sequencia de escape de strings
+      Alguns caracteres são tratados de forma diferente dentro de uma string, a seguir temos alguns deles:
+        \n => Serve como terminador de uma linha
+        \ => Serve para "ignorar" aspas e outros caracteres.
+    */
+
+    umaString = "Uma linha.\nOutra linha."; // Uso do \n para quebrar uma linha.
+    console.log(umaString);
+    umaString = "Uma linha com \"Aspas duplas\" internas."; //Uso da barra invertida para ignorar as aspas duplas.
+    console.log(umaString);
+
+    /*Caracteres Unicode
+      Você também pode usar caracteres unicode em suas strings, preceda o valor dos digitos hexadecimais por "\u"
+      e use os unicodes.
+    */
+
+    umaString = "Isso é amor em chinês : \u7231"; // Uso do \u para reproduzir um unicode.
+    console.log(umaString);
+
+    /*URIS
+      URIs podem dar dor de cabeça na ura de usalas, para isso existem dois métodos basicos, "encodeURI" e "encodeURIComponent"
+      O método encodeURI espera que a string seja algo do tipo "http://umsitequalquer.com" e reserva então os caracteres :
+        ; , / ? : @ & = + $
+      Os caracteres alfanumericos e a seguinte pontuação também não são codificados :
+        - _ . ! ~ * ' ()
+      Já o metodo encodeURIComponent codifica todos os caracteres menos os alfanumericos e de pontuação listados anteriormente.
+      Ele supõe que a string que esta sendo codificada está sendo usada como um parametro de uma URI e então os caracteres que
+      fazer parte normalmente de uma URI, como os seguintes, são codificados:
+        # & + =
+      As duas funções também tem suas funções opostas para decodificar URIS, "decodeURI" e "decodeURIComponent".
+    */
+
+    umaString = encodeURIComponent("http://teste.net/index.php?id=$1&page=$2"); // Uso do encodeURIComponent()
+    console.log(umaString);
+    umaString = decodeURIComponent(umaString); // Uso do decodeURIComponent
+    console.log(umaString);
+    umaString = encodeURI("http://testedois.com/?mial=mussarela&URI="); // Uso do encodeURI()
+    console.log(umaString);
+    umaString = decodeURI(umaString); // Uso do decodeURI()
+    console.log(umaString);
+
+    /*Conversão de string
+      Normalmente valores são convertidos implicitamente em Javascript, se uma função espera uma string e você passa para ela
+      um valor do tipo numerico, a conversão é feita de forma implicita.
+      O sinal de soma "+" pode ser usado com duas com um valor numerico e uma string, fazendo assim a conversão e concatenação das strings.
+      Se a string for a primeira a surgir na expressão então todos os valores seguintes serão convertidos.
+      Caso você use operadores diferentes do +, o tipo oposto de conversão é aplicado e então a string convertida.
+    */
+
+    umNumero = 35.00;
+    alert(umNumero) // alert() espera uma string, mas mesmo assim converte o valor recebido para string.
+    console.log("O numero é : " + umNumero); // É feita a conversão de umNumero e a concatenação da string resultante.
+    console.log("5" + 2 + 1); // Converte os numeros e então é retornado "521"
+    console.log(8 + 1 + "3"); // Junta-se o 7 com o 1 em formato de string resultando em "93"
+    console.log(37 - "5"); // Converte a string para um numerico retornando "32"
+    console.log(15 / "5"); // Converte a string para um numerico retornando "3"
+    console.log("3" * 5); // Converte a string para um numerico retornando "15"
+
+    /*Numericos
+      Tipos de dados numericos em Javascript são numeros de ponto flutuante, mas podem ou não ter um componente fracionário.
+      Caso não contiverem um componente decimal ou fracional, são tratados como inteiros, numero inteiros de base 10 em uma faixa de
+      -253 a 253.
+      Além da base 10 é possivel utilizar outras bases, um numero hexadecimal por exemplo começa com "0x",
+      já um valor octal começa com "0" apenas.
+      A função parseInt retorna a parte inteira de um numero em uma string, independentemente se a string esta
+      formatada como um inteiro ou um pontoflutuante.
+      A função parseFloat retorna o valor em ponto flutuante até que um caractere não seja um sinal (+ ou -),
+      decimal, numerico ou expoente encontrado.
+      A função parseInt também converte numeros decimais para octais e muitos outros, basta expecificar a base que sera usada
+      em uma faixa de 2 a 36
+    */
+
+    umNumero = -2000; // umNumero é um inteiro válido.
+    console.log(umNumero);
+    umNumero = 357841; // umNumero ainda é um inteiro válido.
+    console.log(umNumero);
+    umNumero = 0.317 // umNumero agora é um ponto flutuante.
+    console.log(umNumero);
+    umNumero = 147.365 // umNumero ainda é um ponto flutuante.
+    console.log(umNumero);
+    umNumero = 19.5e-2; // Notação cientifica é permitida, o resultado é 0.195.
+    console.log(umNumero);
+    umNumero = 0xCFCF; // umNumero agora é um hexadecimal.
+    console.log(umNumero);
+    umNumero = 0321; // unNumero agora é um octal.
+    console.log(umNumero);
+    umNumero = "1.23e-4" // Uma string.
+    console.log(parseFloat(umNumero)); // conversão de string para o float, a saida sera 0.000123.
+    console.log(parseInt(umNumero)); // conversão para inteiro, a saida sera 1.
+    umNumero = "123 se escreve un, deux, trois em francês"; // Numero inteiro no começo da string.
+    console.log(parseInt(umNumero)); // conversão para inteiro, a saida é 123
+    console.log(parseFloat(umNumero)); // conversão de string para o float, a saida sera 123 pois não existe pontos(.) na numero.
+    umNumero = parseInt("266", 16); // O numero 266 sera convertido para a base 16 resultando o valor 614.
+    console.log(umNumero);
+    umNumero = parseInt("55", 8); // O numero 55 sera convertido para a base 8 (octal) resultando o valor 45 em decimal.
+    console.log(umNumero);
+
+    /*Booleanos
+      Booleanos são definidos como true ou false, 0 ou 1
+      Você pode usar a negativa dupla (operador de negação "!" duas vezes) para converter explicitamente um numero ou string para um booleano.
+    */
+
+    var booleano = true; // Declaração de uma variavel booleana com valor verdadeiro "true"
+    console.log(booleano);
+    booleano = false; // Atribuição do valor falso "false"
+    console.log(booleano);
+    booleano = 0;
+    console.log(!!booleano);
+    booleano = "1";
+    console.log(!!booleano);
+
+    /*Constantes
+      Constantes possuem nomes mas não são variaveis, ou seja, são apenas valores de leitura.
+      Da mesma forma como as variaveis, uma constante tem escopo global e local.
+    */
+
+    const MINHA_CONSTANTE = "João";
+    console.log(MINHA_CONSTANTE);
+
+  </script>
+  <body>
+
+  </body>
+</html>
