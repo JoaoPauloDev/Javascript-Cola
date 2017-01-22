@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Variaveis</title>
+  </head>
+  <script type="text/javascript">
+
+    alert("Não esqueça de usar o f12 e ir em console/source para ver a execução dos códigos ;) ");
+
+    /*Operadores
+      O Javascript contem uma quantidade de diferentes tipos de instruções, atribuição, chamada de função,
+      laços e condicional. Cada um deles é razoavelmente intuitivo, simples de usar e rápido de aprender.
+      A seguir vemos exemplos de atribuição de valores utilizando o simbolo "="(igual).
+    */
+    console.log("----Atribuição----");
+    var minhaVar = true; var minhaOutraVar = "Oi"; // Isso é valido desde que o ";"(ponto e virgula) desde que o
+    // seja atribuido no final de cada instrução.
+
+    var
+    minhaVar
+    = 'Estranho'; // Isso pode parecer estranho, mas é valido por que a quebra de linha não é considerada como fim da
+    //instrução.
+
+    var minhaUndefined; // Isso é valido, quando não colocamos um valor na variavel nós estamos apenas inicializando ela,
+    // porem o valor atribuido a ela por padrão é "Undefined";
+
+    var valor1 = valor2 = valor3 = "Harmonia"; // É possivel atribuir o mesmo valor a diversas variáveis de uma só vez.
+    console.log("Valor1 é igual a : " + valor1);
+    console.log("Valor2 é igual a : " + valor2);
+    console.log("Valor3 é igual a : " + valor3);
+    valor1 = 0;valor2 = 0;valor3 = 0;
+
+    /*Operadores Aritiméticos
+      Você pode usar operadores aritiméticos para realizar calculos e depois atribuir o resultado a variaveis.
+      A seguir temos os operadores aritiméticos binários, eles tem esse nome por que precisam de dois operandos,
+      um de cada lado do operador, veja:
+
+        + Para adição... Lembre-se que se usa-lo com strings ele concatena elas ;)
+        - Para subtração
+        * Para multiplicação
+        / Para divisão
+        % Para retornar o resto da divisão.
+
+      O Javascript também possui operadores unários, eles são os seguintes:
+
+        ++ Incrementa 1 ao operando
+        -- Decrementa 1 ao operandos
+        - Representa um valor negativo
+
+      Em Javascript, diferentemente de outras linguagens, a divisão resulta em um valor em ponto flutuante,
+      não em um numero inteiro truncado. Os seguintes dados resultam em um valor igual a 1,5 em vez de 1 arredondado.
+    */
+
+    console.log("----Operadores Aritiméticos----");
+
+    valor1 = 3/2; // valor1 é igual a 1,5.
+    console.log(valor1);
+    alor1 = 0;valor2 = 0;valor3 = 0;
+
+    valor1 = 1;
+    valor2 = 2;
+    valor3 = valor2 + valor1; // valor3 tem o valor de 3 (valor2 + valor1) pois uma soma foi realizada.
+    console.log(valor3);
+    valor1 = 0;valor2 = 0;valor3 = 0;
+
+    valor1 = "1";
+    valor2 = 2;
+    valor3 = valor2 * valor1; // valor3 tem o valor 2 (valor2 * valor1) pois a string de valor1 foi convertida.
+    // o mesmo não ocorre caso o operador (+) fosse utilizado.
+    console.log(valor3);
+    valor1 = 0;valor2 = 0;valor3 = 0;
+
+    valor1 = "2";
+    valor2 = "4";
+    valor3 = valor2 * valor1; // valor3 tem o valor 8, as duas strings foram convertidas.
+    console.log(valor3);
+    valor1 = 0;valor2 = 0;valor3 = 0;
+
+    valor1 = 3;
+    valor2 = -valor1; // Negativamos valor1, então agora valor1 é igual a -3
+    valor2++; // valor2 tinha o valor de valor1, porem a operador (++) atribuiu 1 a valor2
+    console.log(valor2); // valor2 é igual a -2
+    valor1 = 0;valor2 = 0;valor3 = 0;
+
+    //Preste muita atenção a seguir (◕‿◕), use o o debuger do browser
+
+    valor1 = 3.0;
+    valor2 = ++valor1; // valor1 é 4.0 e valor2 é o valor de valor1 pré-incrementado
+                      // neste ponto também 4.0
+    valor3 = valor1++; // valor3 é 4.0 e valor1 agora é 5
+    valor1 = 0;valor2 = 0;valor3 = 0;
+
+    /*O que ocorru acima foi o seguinte, em uma expressão, se o operador for de pré-incremento ou listado primeiro, o
+    valor é ajustado antes de o resultado ser atribuido, mas se o operador for de pós-incremento ou listado após a variavel
+    o valor inicial da variável é atribuido primeiro e depois o valor da variavel é ajustado.*/
+
+    /*Precedência
+      Em Javascript os operadores tem precedência de execução, ou seja, alguns deles serão executados antes de outros.
+      Caso dois operadores tenham o mesmo "peso" então a expressão é executada da esquerda para a direita.
+      Para ter um maior controle disso, você pode usar parenteses () para demarcar a precedência.
+    */
+
+    valor1 = 3;
+    valor2 = 2;
+    valor3 = 6;
+    valor1 = valor2 + valor3 * valor1; // O resultado disso não é 24 e sim 20.
+    console.log(valor1);
+    valor1 = 0;valor2 = 0;valor3 = 0;
+
+    valor1 = 3;
+    valor2 = 2;
+    valor3 = 6;
+    valor1 = (valor2 + valor3) * valor1; // Agora sim o resultado é 24.
+    console.log(valor1);
+    valor1 = 0;valor2 = 0;valor3 = 0;
+
+    valor1 = 1;
+    valor1 = valor1 + 2; // É possivel simplificar essa expressão como é mostrado a seguir.
+    valor1 += 3; // Isso é igual a (valor1 = valor1 + 3)
+    console.log(valor1);
+    valor1 = 0;valor2 = 0;valor3 = 0;
+
+    //Esta tecnica de simplificação pode ser utilizada com qualquer um dos operadores binários.
+    //Nõa iremos abordar aqui flags binárias e operadores bitwise pois não são muito utilizados em codigos javascript basicos.
+
+    /*Condicionais e fluxo de programa
+      Normalmente o fluxo de execução em Javascript é linear, porem podemos alterar isso utilizando intruções Condicionais.
+      Temos o "if" que verifica se uma condição é verdadeira e então muda o fluxo de execução para executar um outro bloco de codigo.
+      O parceiro do "if" é o "else", o "else" é executado quando a condição estabelecida pelo "if" não é satisfeita.
+      Também temos o "switch" que muito utilizado quando temos muitos casos para verificar, ele é praticamente varios "if" juntos, só
+      que é mais organizado e performático quando lidamos com muitas possibilidades.
+
+    */
+
+    console.log("----Condicionais e fluxo de programa----");
+
+    valor1 = 3;
+    if(valor1 === 3){// verifica se valor1 é exatamente igual a 3, explicaremos mais adiante o operador "==" e "==="
+      console.log("valor1 é igual a 3"); // como valor1 é igual a 3 o bloco de código é executado.
+    }// Para termos uma garantia melhor de que não hávera problemas, sempre usamos as chaves "{}" em instruções de bloco.
+
+    if(valor1 === 2){ // verifica se valor1 é igual a 2, o que não é o caso. valor1 é na verdade igual a 3.
+      console.log("valor1 é igual a 2"); // o que seria executado caso valor1 fosse igual a 2.
+    }else{ // Como o "if" não é verdadeiro, então o "else" é executado.
+      console.log("valor1 não é igual a 2"); // é executado pois o "if" foi falso.
+    }// sempre use as chaves {} :)
+
+    switch(valor1){ // o switch recebe dentro a variavel valor1 que sera testado. Lembrando que o switch é executado de cima para baixo.
+      case 1: // Caso valor1 seja igual a 1 então o codigo a seguir sera executado.
+        console.log("valor1 é igual a 1"); // codigo executado caso valor1 seja igual a 1;
+        break; // o break serve para terminar a execução e voltar a execução para o seu fluxo anterior fora do switch.
+      case 2: // o proximo caso a ser testado é o 2
+        console.log("valor1 é igual a 2");
+        break;
+      case 3: // Como valor1 é igual a 3 o codigo a seguir é executado.
+        console.log("valor1 é igual a 3"); // isso é executado.
+        break; // Se não existisse este "break" aqui, o codigo continuaria sendo executado e então o "default" seria executado.
+      case 4:
+      case 5:
+      case 6:
+        console.log("valor1 pode ser 4 ou 5 ou 6.");
+        break;
+      default: // é executado quando nenhum caso foi utilizado.
+        console.log("valor1 não é nenhum numero entre 1 e 6");
+    } // O switch assim como o if, possui chaves para delimitar seu espaço, sempre use elas ;)
+    valor1 = 0;valor2 = 0;valor3 = 0;
+    /*Operadores Condicionais e Igualdade.
+      Usamos anteriormente o "===" ele é um operador condicional de Igualdade e identidade, ele verifica se os valores não são apenas o mesmo,
+      mas verifica também se o seu tipo é o mesmo.
+      Também temos o inverso que é o "!==" que verifica se os tipos e valores são exatamente diferentes
+    */
+
+    console.log("----Operadores Condicionais e igualdade----");
+
+    valor1 = 2;
+    valor2 = "2";
+
+    if(valor1 == valor2){ // aqui ocorre uma conversão implicita, então isso é verdadeiro
+      console.log("valor1 é igual \"visualmente\" a valor2"); // é executado
+    }
+
+    if(valor1 === valor2){ // verifica se eles são exatamente iguais sem realizar uma conversão implicita
+      console.log("valor1 é exatamente igual a valor2"); // não sera executado pois os valores não são exatamente iguais
+    }else{
+      console.log("valor1 não é exatamente igual a valor2");
+    }
+
+    // CUIDADO... Essa conversão implicita também acontece dentro do switch, então tome cuidado.
+
+    valor1 = "valor";
+    valor2 = "valor x";
+
+    if(valor1 !== valor2){ // verifica se eles não são exatamente iguais
+      console.log("Diferentes"); // Executado, pois apesar dos seus tipos serem iguais, seus valores são diferentes.
+    }
+
+    valor1 = 1;
+    valor2 = "1";
+
+    if(valor1 != valor2){ // verifica se eles são diferentes
+      console.log("São diferentes"); // Não é executado pois a conversão implicita foi feita
+    }else{
+      console.log("Não são \"visualmente\" diferentes"); // Executado, pois apesar dos seus tipos serem diferentes, seus valores são "iguais".
+    }
+
+
+  </script>
+  <body>
+
+  </body>
+</html>
