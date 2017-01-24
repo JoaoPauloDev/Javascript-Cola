@@ -203,6 +203,52 @@
     }else{
       console.log("Não são \"visualmente\" diferentes"); // Executado, pois apesar dos seus tipos serem diferentes, seus valores são "iguais".
     }
+    valor1 = 0;valor2 = 0;valor3 = 0;
+
+    /*Outros Operadores relacionais
+      Muitas vezes não queremos apenas saber se duas variáveis são iguais ou tem o mesmo valor, anteriormente aprendemos como testar essa igualdade,
+      mas agora queremos fazer algo diferente.
+      Digamos que nós precisamos saber se uma variável é maior do que a outra, para isso usaremos o maior que ">" e o menor que "<".
+      Esses dois operadores também podem ser usados com o simbolo de atribuição "=" formando assim o maior ou igual a ">=" e o
+      menor ou igual a "<=".
+      Da mesma forma que a igualdade, a conversão de tipos ocorre implicitamente entre valores numéricos e de string com os operadores menor que,
+      e maior que.
+      Para valores não numericos os operadores comparam dois valores de acordo com o tipo
+    */
+
+    console.log("----Outros Operadores relacionais----");
+
+    valor1 = 5;
+    valor2 = 7;
+    valor3 = 5;
+
+    if(valor1 < valor2){ // verifica se valor1 é menor que valor2
+      console.log(valor2 + " é maior que " + valor1); // como é verdadeiro a mensagem é exibida.
+    }
+
+    if(valor1 > valor3){ // verifica se valor1 é maior que valor3, isso vai dar false pois os valores são iguais.
+      console.log("valor1 é maior que valor3"); // não é executado.
+    }
+
+    if(valor1 >= valor3){ // agora sim é verdadeiro, pois valor1 e valor3 são iguais, portanto ">=" retorna true.
+      console.log("valor1 é maior ou igual ao valor3"); // É executado
+    }
+
+    valor1 = "loiras";
+    valor2 = "ruivas";
+    valor3 = "morenas";
+
+    if(valor1 > valor2){ // comparação de duas strings
+      console.log("loiras são melhores do que ruivas");
+    }else{
+      console.log("Ruivas são melhores do que loiras");
+    }
+
+     // O javascript compara a primeira letra nesses casos, como a palavra "ruiva" começa com "r" a palavra "ruiva" é "maior" do que "loira" ou "morena". 
+
+    if(valor2 > valor1 && valor2 > valor3){
+      console.log("Ruivas são melhores do que morenas e loiras juntas.");
+    }
 
 
   </script>
