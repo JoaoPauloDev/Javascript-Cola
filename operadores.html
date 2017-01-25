@@ -244,11 +244,33 @@
       console.log("Ruivas são melhores do que loiras");
     }
 
-     // O javascript compara a primeira letra nesses casos, como a palavra "ruiva" começa com "r" a palavra "ruiva" é "maior" do que "loira" ou "morena". 
+     // O javascript compara a primeira letra nesses casos, como a palavra "ruiva" começa com "r" a palavra "ruiva" é "maior" do que "loira" ou "morena".
 
     if(valor2 > valor1 && valor2 > valor3){
       console.log("Ruivas são melhores do que morenas e loiras juntas.");
     }
+
+    /*Operador ternário
+      O operador ternário pode economizar muito código, ele é basicamente um if e um else só que tudo em uma só instrução.
+      Utilizamos o "?" para o caso de uma expressão for verdadeira e ":" para o caso de ser falsa.*/
+
+
+      console.log("----Operador ternário----");
+
+      valor1 = 0;
+      valor2 = 1;
+
+      valor3 = valor2 > valor1 ? "É maior" : "Não é maior"; //Entre o "=" e o "?" fica a nossa condição, caso ela seja verdadeira, então o que estiver entre o
+      // "?" e ":" sera atribuido a valor3, caso seja falso, então o que estiver entre ":" e ";" sera atribuido a valor3.
+      console.log(valor3);// "É maior"
+
+      // O código acima pode ser escrito da seguinte maneira.
+
+      if(valor2 > valor1){ // (valor2 > valor1 ?) verificação
+        valor3 = "É maior"; // (? "É maior" :) true
+      }else{
+        valor3 = "Não é maior"; // (: "Não é maior";) false
+      }
 
 
   </script>
